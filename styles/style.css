@@ -4,15 +4,123 @@
     /* Primary */
     --soft-blue: hsl(215, 51%, 70%);
     --cyan: hsl(178, 100%, 50%);
-    
+
     /* Neutral */
-    --dark-blue-main: (main BG): hsl(217, 54%, 11%);
-    --dark-blue-card: (card BG): hsl(216, 50%, 16%);
+    --dark-blue-main:hsl(217, 54%, 11%);
+    --dark-blue-card:hsl(216, 50%, 16%);
     --dark-blue-line: hsl(215, 32%, 27%);
     --white: hsl(0, 0%, 100%);
 }
 
 body {
+    background-color: var(--dark-blue-main);
+    color: var(--soft-blue);
     font-family: 'Outfit', sans-serif;
-    font-size: 18px;
+    display: grid;
+    place-items: center;
 }
+
+.card {
+    background-color: var(--dark-blue-card);
+    width: 20rem;
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.card__img {
+    border-radius: 0.5rem;
+    background-color: var(--cyan);
+    overflow: hidden;
+    position: relative;
+}
+
+.card__img-overlay {
+  background-color: rgba(0, 255, 247, 0.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: 0.3s ease;
+  display: grid;
+  place-items: center;
+  position: absolute;
+}
+
+.card__img:hover .card__img-overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.card__img-overlay-icon {
+  position: absolute;
+}
+
+.card__desc-title {
+    color: var(--white);
+    font-size: 1.4rem;
+    padding-top: 1.25rem;
+}
+
+.card__desc-title:hover, .card__credit-link:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.card__desc-text {
+    padding: 1rem 0;
+    font-weight: 300;
+}
+
+.card__info {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+.card__info img {
+    display: inline;
+}
+
+.card__info-value, .card__info-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card__info-value {
+    color: var(--cyan);
+    font-weight: 600;
+}
+
+.card__info-time {
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+.card__credit {
+    border-top: 1px solid var(--dark-blue-line);
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card__credit-img {
+    height: 2rem;
+    width: auto;
+    border: 1px solid white;
+    border-radius: 100%;
+}
+
+.card__credit-link {
+    color: var(--white);
+}
+
+/* To-do
+    - adjust placement/size of text
+    - box shadow for card
+    - media queries
+    - alt text
+*/
