@@ -18,13 +18,15 @@ body {
     font-family: 'Outfit', sans-serif;
     display: grid;
     place-items: center;
+    overflow: hidden;
 }
 
 .card {
     background-color: var(--dark-blue-card);
-    width: 20rem;
+    width: 20.5rem;
     border-radius: 1rem;
     padding: 1.5rem;
+    box-shadow: -1px 25px 25px 10px rgb(11, 21, 37);
 }
 
 .card__img {
@@ -35,40 +37,42 @@ body {
 }
 
 .card__img-overlay {
-  background-color: rgba(0, 255, 247, 0.5);
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  transition: 0.3s ease;
-  display: grid;
-  place-items: center;
-  position: absolute;
+    background-color: rgba(0, 255, 247, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: 0.3s ease;
+    display: grid;
+    place-items: center;
+    position: absolute;
 }
 
 .card__img:hover .card__img-overlay {
-  opacity: 1;
-  cursor: pointer;
+    opacity: 1;
+    cursor: pointer;
 }
 
 .card__img-overlay-icon {
-  position: absolute;
+    position: absolute;
 }
 
 .card__desc-title {
     color: var(--white);
-    font-size: 1.4rem;
-    padding-top: 1.25rem;
+    font-size: 1.35rem;
+    padding-top: 1.4rem;
 }
 
-.card__desc-title:hover, .card__credit-link:hover {
+.card__desc-title:hover,
+.card__credit-name--link:hover {
     color: var(--cyan);
     cursor: pointer;
 }
 
 .card__desc-text {
-    padding: 1rem 0;
+    padding: 0.75rem 0;
+    line-height: 1.6;
     font-weight: 300;
 }
 
@@ -78,11 +82,9 @@ body {
     padding-bottom: 1rem;
 }
 
-.card__info img {
-    display: inline;
-}
-
-.card__info-value, .card__info-time {
+.card__info-value,
+.card__info-time {
+    font-size: 0.95rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,7 +98,6 @@ body {
 
 .card__info-time {
     font-weight: 400;
-    font-size: 0.95rem;
 }
 
 .card__credit {
@@ -108,19 +109,22 @@ body {
 }
 
 .card__credit-img {
-    height: 2rem;
+    height: 2.05rem;
     width: auto;
     border: 1px solid white;
     border-radius: 100%;
 }
 
-.card__credit-link {
+.card__credit-name {
+    font-size: 0.97rem;
+}
+
+.card__credit-name--link {
     color: var(--white);
 }
 
-/* To-do
-    - adjust placement/size of text
-    - box shadow for card
-    - media queries
-    - alt text
-*/
+@media only screen and (max-width: 330px) {
+    .card {
+      width: 19.5rem;
+    }
+  }
